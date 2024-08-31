@@ -45,19 +45,6 @@ Service a presentar para el tp de dds, permite obtener las recomendaciones de pu
 
 **Respuesta:**
 - `200 OK` 
-
-## Levantar la api de forma local
-
-### Pasos
-- Utiliza base de datos MySql, se recomienda crear un `.env` con una variable `DB_CONNECTION` y la ruta con la siguiente forma: `mysql+pymysql://*dbUser*:*dbPassword*@mysql:*dbHostingPort*/*dbName*` en la carpeta py
-  
-- Utilizar comando `uvicorn main:app --reload --port (puerto)` en la consola parados en la folder py, en caso de no incluir el flag de port por default se asignara `http://127.0.0.1:8000`
-
-### Dependencias 
-- `fastapi`
-- `sqlalchemy`
--  `geopy`
--  `pydantic`
   
 ## Levantar la api con docker
 
@@ -69,6 +56,22 @@ Service a presentar para el tp de dds, permite obtener las recomendaciones de pu
  3 - ejecutar `docker-compose up --build`
 
  3 - dirigirse a `http://127.0.0.1:8729` (se puede modificar el puerto expuesto desde el dockerfile si es necesario)
+
+
+## Levantar la api de forma local
+
+### Pasos
+- Tener instalado [MySQL](https://www.mysql.com/downloads/)
+  
+- crear un `.env` con una variable `DB_CONNECTION` y la ruta con la siguiente forma: `mysql+pymysql://*dbUser*:*dbPassword*@mysql:*dbHostingPort*/*dbName*` en la carpeta py
+  
+- Utilizar comando `uvicorn main:app --reload --port (puerto)` en la consola parados en la folder py, en caso de no incluir el flag de port por default se asignara `http://127.0.0.1:8000`
+
+### Dependencias 
+- `fastapi`
+- `sqlalchemy`
+-  `geopy`
+-  `pydantic`
 
 
 
