@@ -53,9 +53,14 @@ Service a presentar para el tp de dds, permite obtener las recomendaciones de pu
 
  2 - crear un `.env` con una variable `DB_CONNECTION` y la ruta con la siguiente forma: `mysql+pymysql://*dbUser*:*dbPassword*@mysql:*dbHostingPort*/*dbName*` en la carpeta py
 
- 3 - ejecutar `docker-compose up --build`
+ 3 - ejecutar `docker-compose up --build` o `docker-compose build` y `docker-compose up -d` 
 
  3 - dirigirse a `http://127.0.0.1:8729` (se puede modificar el puerto expuesto desde el dockerfile si es necesario)
+
+ 4 - una vez finalizado se puede terminar con `docker-compose down`
+
+ ### debugging
+ - ejecutar `docker logs *id del container*`
 
 
 ## Levantar la api de forma local
@@ -72,6 +77,7 @@ Service a presentar para el tp de dds, permite obtener las recomendaciones de pu
 - `sqlalchemy`
 -  `geopy`
 -  `pydantic`
+-  `dotenv`
 
 
 
