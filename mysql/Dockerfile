@@ -1,4 +1,4 @@
-FROM mysql:9
+FROM mysql:latest
 
 WORKDIR /app
 

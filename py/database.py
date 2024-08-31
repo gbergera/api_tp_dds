@@ -7,6 +7,8 @@ import os
 load_dotenv()
 db_connection = os.getenv("DB_CONNECTION")
 
+print(f"DB_CONNECTION: {db_connection}") 
+
 engine = create_engine(db_connection)
 
 SessionLocal = sessionmaker(autocommit = False,autoflush=False,bind=engine)

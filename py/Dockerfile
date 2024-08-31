@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.12-slim
 
 WORKDIR /app
 
@@ -7,10 +7,14 @@ COPY database.py .
 COPY .env .
 
 
-RUN pip install fastapi sqlalchemy geopy pydantic python-dotenv gunicorn pymysql
 
-
-CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:8729", "--workers", "4"]
+RUN pip install --no-cache-dir fastapi sqlalchemy geopy pydantic python-dotenv uvicorn pymysql cryptography
 
 EXPOSE 8729
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8729"]
+
+
+
+
 
